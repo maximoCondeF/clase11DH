@@ -34,14 +34,16 @@ let collectibles = {
     figuras : unifiedCollectibles,
     //Paso 5: a:
     listFigures : function(){for (let obj of unifiedCollectibles){console.log(obj)}},
+    listFiguresForEach : function(){unifiedCollectibles.forEach((figura)=>{console.log(figura)})}   ,
     //Paso 5: b:
-      figuresByBrand : function(marcaFigura){
-    let arrayMarca1 = this.figuras.filter(function(elem){
-        return elem.marca == marcaFigura;
-    })  
-    return arrayMarca1;   
+    figuresByBrand : function(marcaFigura){
+    let arrayMarca = this.figuras.filter(function(figura){
+      return figura.marca == marcaFigura;
+    })
+    return arrayMarca;   
     }
 };
 //Paso 5: c:
 console.log(collectibles.listFigures());
+console.log(collectibles.listFiguresForEach());
 console.log(collectibles.figuresByBrand("Hot Toys"));
